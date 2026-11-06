@@ -1,0 +1,25 @@
+{
+  "name": "algions-bus-booking-system",
+  "version": "1.0.0",
+  "description": "Full-Stack Bus Booking Management System Assessment for Algions AI Labs Private Limited",
+  "private": true,
+  "scripts": {
+    "test": "npm test --prefix backend",
+    "seed": "npm run seed --prefix backend",
+    "build": "npm run build --prefix frontend",
+    "dev:backend": "npm run dev --prefix backend",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "start:backend": "npm start --prefix backend"
+  },
+  "keywords": [
+    "mern",
+    "bus-booking",
+    "mongodb-transactions",
+    "concurrency",
+    "double-booking-prevention",
+    "algions-assessment"
+  ],
+  "author": "Full-Stack Assessment Candidate",
+  "license": "ISC"
+}
+
