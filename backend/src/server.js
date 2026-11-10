@@ -18,10 +18,10 @@ const startServer = async () => {
 
   try {
     console.log('[MongoDB] Initializing database connection...');
-    if (!process.env.MONGODB_URI) {
-      console.warn('[MongoDB] WARNING: MONGODB_URI is not set! Using localhost fallback.');
+    if (process.env.MONGODB_URI) {
+      console.log('[MongoDB] Using custom MONGODB_URI from environment.');
     } else {
-      console.log('[MongoDB] MONGODB_URI detected from environment.');
+      console.log('[MongoDB] Using configured MongoDB Atlas cluster.');
     }
 
     await connectDB();

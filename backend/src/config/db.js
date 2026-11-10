@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
 
+const DEFAULT_MONGODB_URI = 'mongodb+srv://yt:9WUIHYgSM0XqpIa6@backend.zcc0sc8.mongodb.net/bus_booking_db?retryWrites=true&w=majority';
+
 /**
  * Connect to MongoDB with robust error handling and event logging
  */
 const connectDB = async () => {
-  const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/bus_booking_db';
+  const mongoURI = process.env.MONGODB_URI || DEFAULT_MONGODB_URI;
 
   try {
     const conn = await mongoose.connect(mongoURI, {
