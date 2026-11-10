@@ -9,6 +9,7 @@ const connectDB = async () => {
   try {
     const conn = await mongoose.connect(mongoURI, {
       autoIndex: true, // Build indexes defined in schemas
+      serverSelectionTimeoutMS: 10000
     });
 
     console.log(`[MongoDB] Connected successfully: ${conn.connection.host}/${conn.connection.name}`);
@@ -24,10 +25,6 @@ const connectDB = async () => {
     return conn;
   } catch (error) {
     console.error(`[MongoDB] Initial connection failed:`, error.message);
-    // Don't crash immediately in test environments
-    if (process.env.NODE_ENV !== 'test') {
-      process.exit(1);
-    }
     throw error;
   }
 };
