@@ -10,8 +10,17 @@ export const getClientToken = () => {
   return token;
 };
 
+// Clean base URL: ensure proper /api endpoint regardless of how env variable was entered
+const getBaseURL = () => {
+  const envUrl = import.meta.env.VITE_API_BASE_URL;
+  if (!envUrl || envUrl === '/') return '/api';
+  const trimmed = envUrl.trim().replace(/\/+$/, '');
+  if (trimmed.endsWith('/api')) return trimmed;
+  return `${trimmed}/api`;
+};
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || '/api',
+  baseURL: getBaseURL(),
   headers: {
     'Content-Type': 'application/json'
   }
