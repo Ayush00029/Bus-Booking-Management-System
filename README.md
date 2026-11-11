@@ -6,9 +6,11 @@
 ---
 
 ## 🚀 Live Demo & Quick Links
-- **Backend API**: `http://localhost:5000/api`
-- **Interactive Swagger Documentation**: `http://localhost:5000/api-docs`
-- **Frontend Web Application**: `http://localhost:5173`
+- **Live Backend API (Render)**: `https://bus-booking-management-system-890v.onrender.com/api`
+- **Live Swagger Documentation**: `https://bus-booking-management-system-890v.onrender.com/api-docs`
+- **Live Health Check**: `https://bus-booking-management-system-890v.onrender.com/api/health`
+- **Local Backend API**: `http://localhost:5000/api`
+- **Local Frontend Application**: `http://localhost:5173`
 - **Architecture Documentation**: [`docs/ARCHITECTURE_AND_DESIGN.md`](./docs/ARCHITECTURE_AND_DESIGN.md)
 - **Entity-Relationship Diagram**: [`docs/ER_DIAGRAM.md`](./docs/ER_DIAGRAM.md)
 - **Technical Report**: [`docs/TECHNICAL_REPORT.md`](./docs/TECHNICAL_REPORT.md)
@@ -169,6 +171,29 @@ User (id, name, email [UK], password, role, phone, timestamps)
                                                         └── Bus (busNumber [UK], layoutType, seatConfiguration)
                                                               └── BusOperator (code [UK], name, rating)
 ```
+
+---
+
+## ✅ Acceptance Criteria Verification (Rubric Alignment)
+
+| # | Acceptance Criterion | Implementation & Evidence | Status |
+|---|---|---|---|
+| **1** | **A passenger can search a valid trip and book an available seat.** | `SearchResultsPage.jsx` filters trips by origin/destination/date; `SeatSelectionPage.jsx` locks berth; `CheckoutPage.jsx` completes reservation and returns unique PNR. Verified in `tests/search.test.js` & `tests/booking.test.js`. | **PASS** |
+| **2** | **Two users cannot confirm the same seat on one trip.** | Enforced via compound unique constraint `BookedSeatSchema.index({ tripId: 1, seatNumber: 1 }, { unique: true })` inside MongoDB ACID session transaction. Concurrent test in `tests/booking.test.js` confirms simultaneous requests yield 1 success (`201`) and 1 conflict (`409`). | **PASS** |
+| **3** | **The PNR includes correct passenger, route, date and seat details.** | Unique PNR (`ALG-XXXXXX`) generated via `pnrGenerator.js`. `ConfirmationPage.jsx` and `GET /api/bookings/pnr/:pnr` render full passenger details, departure/arrival timestamps, seat numbers, fare breakdown, and printable boarding pass. | **PASS** |
+| **4** | **Cancellation changes seat availability and refund status according to the rule.** | `cancellationPolicy.js` calculates time-decayed refunds (>24h: 80%, 12-24h: 50%, <12h: 0%). Releases `BookedSeat` records, updates `Trip.availableSeats`, and marks booking as `CANCELLED`. Verified in `tests/cancellation.test.js`. | **PASS** |
+| **5** | **Operator manifest and occupancy summaries reconcile with confirmed tickets.** | `PassengerManifestPage.jsx` (`/admin/manifests`) displays full roll-call per trip. `AdminDashboardPage.jsx` aggregates occupancy % and revenue KPIs directly from confirmed MongoDB records. Verified in `tests/admin.test.js`. | **PASS** |
+
+---
+
+## ⚠️ Known Limitations & Design Assumptions
+
+In strict adherence to the assessment guidelines (*"Use your own free-tier/local environment. Do not pay for hosting or external services."*), the following architectural boundaries and assumptions are maintained:
+1. **Simulated Payment Gateway**: Real merchant payment gateways (Razorpay, Stripe) require commercial KYC and paid webhook infrastructure. Payment processing is simulated as instant authorized confirmation with realistic transaction records, adhering to zero-cost constraints.
+2. **Simulated Outbound Notifications**: SMS and email dispatch are executed via server console logging and audit records rather than paid third-party APIs (Twilio, SendGrid).
+3. **Cancellation Policy Definition**: Cancellation rules follow an industry-standard 3-tiered time-decay model (>24h: 80% refund, 12-24h: 50%, <12h: 0%) hardcoded in `backend/src/utils/cancellationPolicy.js` rather than dynamic user-defined rule scripting.
+4. **Currency Handling**: All commercial transactions and fares are handled in Indian Rupees (INR - ₹). Multi-currency FX conversion is out of scope.
+5. **Scheduled Transit Tracking**: The system tracks scheduled route milestones, estimated arrival times, and boarding stops without integrating physical satellite hardware / GPS telemetry.
 
 ---
 

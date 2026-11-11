@@ -89,3 +89,14 @@ All 40 automated tests executed with Jest and Supertest pass with 100% success a
 
 Total: **40 passed, 40 total (100% pass rate)**.
 
+---
+
+## 6. Known Limitations & Architectural Assumptions
+
+To adhere strictly to zero-cost free-tier evaluation guidelines:
+1. **Simulated Payment Gateway**: Instant transaction confirmation is simulated with realistic checkout status transitions and refund ledgers rather than integrating commercial merchant gateways (Razorpay/Stripe).
+2. **Simulated Outbound Dispatch**: Notifications are logged to backend audit trails rather than incurring paid Twilio/SendGrid SMS/email infrastructure costs.
+3. **Cancellation Rule Engine**: Configured as a structured 3-tier time-decay matrix (>24h: 80%, 12-24h: 50%, <12h: 0%) in `backend/src/utils/cancellationPolicy.js`.
+4. **Currency Standardization**: Operates exclusively in INR (₹).
+5. **Route Milestones**: Focuses on scheduled station stops and boarding windows without satellite GPS hardware integration.
+
