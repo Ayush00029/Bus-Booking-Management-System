@@ -529,28 +529,6 @@ export default function ConfirmationPage() {
                   </div>
                 </div>
               </div>
-
-              {/* Live Coach Tracker Teaser Bar */}
-              <div className="bg-surface-container rounded-2xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4 border border-surface-container-high print:hidden">
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-primary text-on-primary flex items-center justify-center shrink-0 shadow-xs">
-                    <span className="material-symbols-outlined text-[22px]">navigation</span>
-                  </div>
-                  <div>
-                    <p className="font-headline-sm text-headline-sm text-on-surface">Vehicle Telemetry Active</p>
-                    <p className="font-body-sm text-body-sm text-on-surface-variant">
-                      Live satellite telemetry pinged • On-time departure expected
-                    </p>
-                  </div>
-                </div>
-                <button
-                  type="button"
-                  onClick={() => alert(`Tracking ${snapshot.busNumber || 'Vehicle'}. Currently approaching origin corridor.`)}
-                  className="px-4 py-2 rounded-xl bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-label-md text-label-md transition-colors shadow-xs whitespace-nowrap cursor-pointer"
-                >
-                  Track Bus Live Radar
-                </button>
-              </div>
             </div>
 
             {/* Scalloped Tear-Off Perforation Divider (Desktop Visual) */}
@@ -700,20 +678,20 @@ export default function ConfirmationPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Card 1: Live Radar & Rest Stops */}
+            {/* Card 1: Verified Rest Stops */}
             <div className="bg-surface-container-lowest rounded-2xl p-6 shadow-xs border border-surface-container-high flex flex-col justify-between space-y-4 hover:shadow-md transition-shadow">
               <div className="space-y-3">
                 <div className="w-12 h-12 rounded-xl bg-primary-fixed text-primary flex items-center justify-center">
                   <span className="material-symbols-outlined text-[26px]">fmd_good</span>
                 </div>
-                <h4 className="font-headline-sm text-headline-sm text-on-surface">Live Bus Radar & Rest Stops</h4>
+                <h4 className="font-headline-sm text-headline-sm text-on-surface">Highway Rest Stops</h4>
                 <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-                  Track coach in real-time. Planned 30-min hygienic food stop along the highway corridor with clean sanitized restrooms.
+                  Planned 30-min hygienic food stop along the highway corridor with clean sanitized restrooms and certified food courts.
                 </p>
               </div>
               <div className="pt-2">
                 <span className="inline-flex items-center gap-1.5 font-label-md text-label-md text-primary font-bold">
-                  <span>En-Route Live Tracker</span>
+                  <span>Boarding Guidelines</span>
                   <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
                 </span>
               </div>

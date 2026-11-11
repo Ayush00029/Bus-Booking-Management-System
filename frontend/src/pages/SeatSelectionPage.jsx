@@ -285,7 +285,7 @@ export default function SeatSelectionPage() {
             <div className="flex items-center gap-3">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm">
                 <span className="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
-                Live GPS Tracking Active
+                Verified Scheduled Route
               </span>
               <span className="text-outline-variant hidden sm:inline">•</span>
               <span className="font-label-sm text-label-sm text-on-surface-variant hidden sm:inline">

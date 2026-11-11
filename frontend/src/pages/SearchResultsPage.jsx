@@ -27,7 +27,6 @@ export default function SearchResultsPage() {
   const [selectedTimeSlots, setSelectedTimeSlots] = useState([]);
   const [maxPrice, setMaxPrice] = useState(2500);
   const [filterPrimoOnly, setFilterPrimoOnly] = useState(false);
-  const [filterGpsOnly, setFilterGpsOnly] = useState(false);
   const [sortBy, setSortBy] = useState('departure');
   const [sortOrder, setSortOrder] = useState('asc');
 
@@ -275,7 +274,6 @@ export default function SearchResultsPage() {
     setSelectedTimeSlots([]);
     setMaxPrice(2500);
     setFilterPrimoOnly(false);
-    setFilterGpsOnly(false);
   };
 
   const hasActiveFilters =
@@ -283,8 +281,7 @@ export default function SearchResultsPage() {
     selectedOperators.length > 0 ||
     selectedTimeSlots.length > 0 ||
     maxPrice < 2500 ||
-    filterPrimoOnly ||
-    filterGpsOnly;
+    filterPrimoOnly;
 
   return (
     <div className="min-h-screen bg-background font-body text-on-surface">
@@ -464,19 +461,6 @@ export default function SearchResultsPage() {
                     type="checkbox"
                     checked={filterPrimoOnly}
                     onChange={(e) => setFilterPrimoOnly(e.target.checked)}
-                    className="rounded text-primary focus:ring-primary h-4 w-4"
-                  />
-                </label>
-
-                <label className="flex items-center justify-between p-2 rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition text-xs">
-                  <span className="flex items-center gap-2 font-medium text-on-surface">
-                    <span className="material-symbols-outlined text-primary text-sm">my_location</span>
-                    Live GPS Tracking
-                  </span>
-                  <input
-                    type="checkbox"
-                    checked={filterGpsOnly}
-                    onChange={(e) => setFilterGpsOnly(e.target.checked)}
                     className="rounded text-primary focus:ring-primary h-4 w-4"
                   />
                 </label>
@@ -764,8 +748,8 @@ export default function SearchResultsPage() {
                             <span className="flex items-center gap-1" title="Clean Blankets">
                               <span className="material-symbols-outlined text-xs">bed</span> Blanket
                             </span>
-                            <span className="flex items-center gap-1" title="Live GPS">
-                              <span className="material-symbols-outlined text-xs">my_location</span> GPS
+                            <span className="flex items-center gap-1" title="Verified Safe Operator">
+                              <span className="material-symbols-outlined text-xs">verified_user</span> Verified
                             </span>
                           </div>
                         </div>
@@ -1046,7 +1030,7 @@ export default function SearchResultsPage() {
             <div>
               <h4 className="font-headline font-bold text-sm text-on-surface">Primo Verified Fleets</h4>
               <p className="text-xs text-on-surface-variant mt-1 leading-relaxed">
-                Every bus operator is screened for safety, GPS reliability, on-time departures, and sanitized interiors.
+                Every bus operator is screened for safety, certified drivers, on-time departures, and sanitized interiors.
               </p>
             </div>
           </div>

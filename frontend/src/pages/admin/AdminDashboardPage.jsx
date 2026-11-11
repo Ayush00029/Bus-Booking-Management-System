@@ -370,14 +370,14 @@ export default function AdminDashboardPage() {
                     </span>
                     <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-xs font-semibold">
                       <span className="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
-                      <span>Fleet GPS Pulse: 99.8% Healthy</span>
+                      <span>Fleet Status: 100% Operational</span>
                     </div>
                   </div>
                   <h1 className="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-1">
                     Fleet Operations & Executive Analytics
                   </h1>
                   <p className="font-body-md text-body-md text-on-surface-variant">
-                    Live telemetry and commercial revenue intelligence across intercity transit corridors
+                    Fleet analytics and commercial revenue intelligence across intercity transit corridors
                   </p>
                 </div>
 
@@ -531,7 +531,7 @@ export default function AdminDashboardPage() {
                 </div>
                 <div className="flex items-center justify-between mt-3 pt-2 text-on-surface-variant font-body-sm text-xs border-t border-surface-container">
                   <span>Waitlist: Auto-cleared</span>
-                  <span className="text-outline font-label-sm text-xs">Live Telemetry</span>
+                  <span className="text-outline font-label-sm text-xs">Live Database</span>
                 </div>
               </div>
 
@@ -580,7 +580,7 @@ export default function AdminDashboardPage() {
                       <h2 className="font-headline-sm text-headline-sm text-on-surface font-bold">
                         14-Day Booking & Revenue Velocity
                       </h2>
-                      <span className="material-symbols-outlined text-outline text-[18px]" title="Aggregated telemetry from MongoDB transactions">
+                      <span className="material-symbols-outlined text-outline text-[18px]" title="Aggregated analytics from MongoDB transactions">
                         info
                       </span>
                     </div>

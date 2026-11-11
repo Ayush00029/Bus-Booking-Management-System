@@ -97,7 +97,7 @@ export default function HomePage() {
         { icon: 'bed', title: 'Single Sleeper Berths' },
         { icon: 'wifi', title: 'Free Fast Wi-Fi' },
         { icon: 'power', title: 'Power Sockets' },
-        { icon: 'near_me', title: 'GPS Live Tracking' }
+        { icon: 'verified_user', title: 'Verified Safety' }
       ]
     },
     {
@@ -119,7 +119,7 @@ export default function HomePage() {
         { icon: 'airline_seat_recline_normal', title: 'Recliner Seats' },
         { icon: 'water_drop', title: 'Water Bottle Included' },
         { icon: 'power', title: 'Power Sockets' },
-        { icon: 'near_me', title: 'Live Bus GPS' }
+        { icon: 'sanitizer', title: 'Sanitized Cabin' }
       ]
     },
     {
@@ -141,7 +141,7 @@ export default function HomePage() {
         { icon: 'airline_seat_individual_suite', title: 'Blanket & Pillow' },
         { icon: 'health_and_safety', title: 'Emergency SOS' },
         { icon: 'power', title: 'Power Sockets' },
-        { icon: 'near_me', title: 'Live Bus GPS' }
+        { icon: 'verified_user', title: 'Verified Safety' }
       ]
     },
     {
@@ -163,7 +163,7 @@ export default function HomePage() {
         { icon: 'bed', title: 'Sleeper Berths' },
         { icon: 'wifi', title: 'Free Wi-Fi' },
         { icon: 'restaurant', title: 'Snacks Included' },
-        { icon: 'near_me', title: 'Live Bus GPS' }
+        { icon: 'sanitizer', title: 'Sanitized Cabin' }
       ]
     },
     {
@@ -185,7 +185,7 @@ export default function HomePage() {
         { icon: 'airline_seat_recline_normal', title: 'Semi-Sleeper' },
         { icon: 'wifi', title: 'Onboard WiFi' },
         { icon: 'power', title: 'USB Sockets' },
-        { icon: 'near_me', title: 'Live GPS' }
+        { icon: 'verified_user', title: 'Verified Safety' }
       ]
     },
     {
@@ -207,7 +207,7 @@ export default function HomePage() {
         { icon: 'bed', title: 'Lower/Upper Berths' },
         { icon: 'tv', title: 'Personal Screen' },
         { icon: 'power', title: 'Charging Port' },
-        { icon: 'near_me', title: 'Live GPS' }
+        { icon: 'sanitizer', title: 'Sanitized Cabin' }
       ]
     },
     {
@@ -229,7 +229,7 @@ export default function HomePage() {
         { icon: 'airline_seat_recline_normal', title: 'Pushback Seater' },
         { icon: 'water_drop', title: 'Complimentary Water' },
         { icon: 'power', title: 'Power Sockets' },
-        { icon: 'near_me', title: 'Live Bus GPS' }
+        { icon: 'verified_user', title: 'Verified Safety' }
       ]
     },
     {
@@ -251,7 +251,7 @@ export default function HomePage() {
         { icon: 'bed', title: 'Single & Double Berths' },
         { icon: 'wifi', title: 'Free Wi-Fi' },
         { icon: 'airline_seat_individual_suite', title: 'Fresh Linens' },
-        { icon: 'near_me', title: 'Live Bus GPS' }
+        { icon: 'sanitizer', title: 'Sanitized Cabin' }
       ]
     }
   ];
@@ -652,121 +652,6 @@ export default function HomePage() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Live Bus GPS Tracking & App Download Section */}
-      <section className="w-full bg-surface py-16 lg:py-24 overflow-hidden relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="bg-surface-container-lowest rounded-3xl shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-6 sm:p-8 lg:p-12 relative border border-slate-200/60">
-            {/* Background Ambient Accent */}
-            <div className="absolute -right-24 -bottom-24 w-96 h-96 bg-secondary/10 rounded-full blur-3xl pointer-events-none"></div>
-
-            {/* Left Column: Copy & Actions */}
-            <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-fixed/40 text-on-secondary-fixed text-xs font-bold">
-                <span className="flex h-2 w-2 rounded-full bg-secondary"></span>
-                <span>REAL-TIME SATELLITE TELEMETRY</span>
-              </div>
-
-              <h2 className="text-2xl sm:text-4xl font-extrabold text-on-surface leading-tight tracking-tight">
-                Never Miss Your Bus with <br className="hidden sm:inline" />
-                Live Rest-Stop & GPS Tracking
-              </h2>
-
-              <p className="text-sm sm:text-base text-on-surface-variant max-w-xl leading-relaxed">
-                Track your bus in real-time, get automated departure updates 30 minutes before arrival, and inspect rest-stop amenities and hygiene ratings along every corridor.
-              </p>
-
-              {/* Tracking Feature Badges */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-2xl bg-surface-container flex items-center justify-center text-primary">
-                    <span className="material-symbols-outlined text-[20px]">radar</span>
-                  </div>
-                  <div>
-                    <p className="text-xs sm:text-sm font-bold text-on-surface">Sub-Meter Precision</p>
-                    <p className="text-xs text-on-surface-variant">Live updates refreshed every 5 seconds</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-2xl bg-surface-container flex items-center justify-center text-secondary">
-                    <span className="material-symbols-outlined text-[20px]">share_location</span>
-                  </div>
-                  <div>
-                    <p className="text-xs sm:text-sm font-bold text-on-surface">Family Journey Sharing</p>
-                    <p className="text-xs text-on-surface-variant">Live trip progress and ETA sharing</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Trust & Dispatch Guarantee */}
-              <div className="pt-4 flex flex-wrap items-center gap-4">
-                <div className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-surface-container-low border border-slate-200 shadow-xs">
-                  <span className="material-symbols-outlined text-secondary text-[22px]">verified_user</span>
-                  <div>
-                    <p className="text-xs font-bold text-on-surface">100% Guaranteed Boarding</p>
-                    <p className="text-[11px] text-on-surface-variant">ACID double-booking prevention on all routes</p>
-                  </div>
-                </div>
-                <div className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-surface-container-low border border-slate-200 shadow-xs">
-                  <span className="material-symbols-outlined text-primary text-[22px]">support_agent</span>
-                  <div>
-                    <p className="text-xs font-bold text-on-surface">24/7 Transit Dispatch</p>
-                    <p className="text-[11px] text-on-surface-variant">Dedicated round-the-clock passenger helpdesk</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column: Interactive Live Transit Map Preview */}
-            <div className="lg:col-span-5 relative">
-              <div className="bg-surface-container-low rounded-3xl p-4 shadow-lg border border-slate-200">
-                {/* Simulated GPS Dashboard Frame */}
-                <div className="flex items-center justify-between pb-3 mb-3 bg-surface-container-lowest px-4 py-2.5 rounded-2xl shadow-xs">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-secondary animate-ping"></span>
-                    <span className="text-xs text-on-surface font-bold">TRIP #AGB-9042 LIVE</span>
-                  </div>
-                  <span className="text-xs text-secondary font-bold">ON TIME (ETA 22:45)</span>
-                </div>
-
-                {/* Map View container */}
-                <div
-                  className="w-full h-64 rounded-2xl bg-cover bg-center relative overflow-hidden flex flex-col justify-end p-4 shadow-inner"
-                  style={{
-                    backgroundImage: `url('https://lh3.googleusercontent.com/aida-public/AB6AXuD-NGkbDoZG-RA5bG9cr9Nb8plpH4FlKLHGaNM63b6W2taQibzBKEg2Wg--Jo9bMC-Vk_l244kGN6ST9cGYCyJWWc9E5GcbIytPprj_zo3rX9oHdrg537zqSQs341Cz_3iAObVCtjKpC3gLWn9uVJQEqJFPSvCS07SYAEJ3oxABr-FKQUIfgvqBXCkIXIs3UP0cdM3VXIpqh_0d90fv2A1ABGyzv8d_Tu22xBRXMd1M')`
-                  }}
-                >
-                  <div className="bg-surface-container-lowest/95 backdrop-blur-md p-3.5 rounded-2xl shadow-md border border-white/60">
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="text-xs text-primary font-bold">SRS Dreamliner Volvo Multi-Axle</span>
-                      <span className="text-xs text-on-surface-variant font-medium">Speed: 74 km/h</span>
-                    </div>
-                    <div className="w-full bg-surface-container h-1.5 rounded-full overflow-hidden my-2">
-                      <div className="bg-secondary h-full rounded-full transition-all duration-1000" style={{ width: '68%' }}></div>
-                    </div>
-                    <div className="flex items-center justify-between text-on-surface-variant text-xs">
-                      <span>Current: Dharwad Tollway</span>
-                      <span className="text-on-surface font-bold">142 km to Panaji</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-3 flex items-center justify-between px-2 text-on-surface-variant text-[11px] font-medium">
-                  <span className="flex items-center gap-1">
-                    <span className="material-symbols-outlined text-[15px] text-secondary">wifi_tethering</span>
-                    <span>GPS Signal: 100%</span>
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <span className="material-symbols-outlined text-[15px] text-primary">local_cafe</span>
-                    <span>Next Halt: Chitradurga Food Plaza (18m)</span>
-                  </span>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>

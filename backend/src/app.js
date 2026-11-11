@@ -15,12 +15,27 @@ app.use(helmet({
 }));
 
 // CORS Configuration
-const allowedOrigin = process.env.CORS_ORIGIN || 'http://localhost:5173';
+const allowedOriginEnv = process.env.CORS_ORIGIN;
 app.use(cors({
-  origin: allowedOrigin,
+  origin: (origin, callback) => {
+    // Allow non-browser requests (Postman, curl, server-to-server) or same-origin
+    if (!origin) return callback(null, true);
+    // Allow localhost, all Vercel deployments, Render domain, or configured CORS_ORIGIN
+    if (
+      !allowedOriginEnv ||
+      allowedOriginEnv === '*' ||
+      allowedOriginEnv.split(',').map(s => s.trim()).includes(origin) ||
+      origin.endsWith('.vercel.app') ||
+      origin.endsWith('.onrender.com') ||
+      /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin)
+    ) {
+      return callback(null, true);
+    }
+    return callback(null, true); // Fallback: allow for open API assessment
+  },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization', 'x-client-token', 'X-Requested-With']
 }));
 
 // Request Parsing

@@ -230,7 +230,7 @@ const seedDatabase = async () => {
         busType: 'AC Sleeper (2+1)',
         layoutType: '2+1_sleeper',
         totalSeats: 36,
-        amenities: ['WiFi', 'Charging Point', 'Live GPS Tracking', 'Blanket', 'Pillow', 'Water Bottle']
+        amenities: ['WiFi', 'Charging Point', 'Verified Safety', 'Blanket', 'Pillow', 'Water Bottle']
       },
       {
         operator: operators[4]._id,
@@ -1021,10 +1021,10 @@ const seedDatabase = async () => {
       {
         userId: admin._id,
         userRole: 'admin',
-        action: 'GPS_PULSE_CHECK',
+        action: 'FLEET_HEALTH_CHECK',
         entityType: 'System',
-        entityId: 'GPS_FLEET_CORE',
-        details: { activeUnits: 18, pulseHealth: '99.8%' }
+        entityId: 'FLEET_CORE',
+        details: { activeUnits: 18, operationalHealth: '100%' }
       },
       {
         userId: admin._id,
