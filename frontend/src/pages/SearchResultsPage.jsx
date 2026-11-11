@@ -843,7 +843,7 @@ export default function SearchResultsPage() {
                           <button
                             type="button"
                             onClick={() => navigate(`/trips/${trip._id}/seats`, { state: { trip } })}
-                            title="Open Interactive Bus Deck Simulator"
+                            title="Open Dedicated Seat Map"
                             className="p-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-primary border border-surface-container-high transition flex items-center justify-center shadow-xs"
                           >
                             <span className="material-symbols-outlined text-base">splitscreen</span>
@@ -874,24 +874,14 @@ export default function SearchResultsPage() {
 
                           {/* Reservation & Quick Summary Col */}
                           <div className="lg:col-span-5 bg-surface-container-lowest p-6 rounded-2xl border border-surface-container-high shadow-sm space-y-5">
-                            <div className="flex items-center justify-between">
-                              <div>
-                                <h4 className="font-headline font-bold text-sm text-on-surface flex items-center gap-2">
-                                  <span className="material-symbols-outlined text-primary text-base">receipt_long</span>
-                                  Booking Manifest
-                                </h4>
-                                <p className="text-xs text-on-surface-variant mt-0.5">
-                                  Review selected seats and pickup locations
-                                </p>
-                              </div>
-                              <button
-                                type="button"
-                                onClick={() => navigate(`/trips/${tripDetail._id}/seats`, { state: { trip: tripDetail, selectedSeats } })}
-                                className="text-xs font-headline font-bold text-primary hover:underline flex items-center gap-1 cursor-pointer"
-                              >
-                                <span>Full Deck Simulator</span>
-                                <span className="material-symbols-outlined text-xs">open_in_new</span>
-                              </button>
+                            <div>
+                              <h4 className="font-headline font-bold text-sm text-on-surface flex items-center gap-2">
+                                <span className="material-symbols-outlined text-primary text-base">receipt_long</span>
+                                Booking Manifest
+                              </h4>
+                              <p className="text-xs text-on-surface-variant mt-0.5">
+                                Review selected seats and pickup locations
+                              </p>
                             </div>
 
                             {/* Boarding Point Dropdown */}

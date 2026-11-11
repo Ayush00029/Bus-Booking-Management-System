@@ -236,7 +236,7 @@ export default function SeatSelectionPage() {
     return (
       <div className="min-h-screen bg-surface flex flex-col items-center justify-center p-6 text-center">
         <div className="animate-spin rounded-full h-12 w-12 border-4 border-surface-container-high border-t-primary mb-4"></div>
-        <h3 className="font-headline-md text-headline-md text-on-surface">Initializing Cabin Simulator...</h3>
+        <h3 className="font-headline-md text-headline-md text-on-surface">Initializing Bus Deck Layout...</h3>
         <p className="font-body-md text-body-md text-on-surface-variant mt-1">
           Locking real-time berth availability across all regional counters.
         </p>
@@ -417,7 +417,7 @@ export default function SeatSelectionPage() {
         </div>
       </section>
 
-      {/* 3. Main Workstation Layout: Dual-Deck Bus Simulator & Sticky Reservation Drawer */}
+      {/* 3. Main Workstation Layout: Dual-Deck Bus Seat Layout & Sticky Reservation Drawer */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
         <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 items-start">
           {/* LEFT / CENTER: BUS CABIN CANVAS (8 Cols on xl) */}
