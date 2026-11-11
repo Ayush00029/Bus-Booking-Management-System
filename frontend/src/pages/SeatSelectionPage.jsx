@@ -337,9 +337,9 @@ export default function SeatSelectionPage() {
 
             {/* Amenities Chips */}
             <div className="flex flex-wrap items-center gap-2">
-              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm shadow-xs" title="Starlink Satellite WiFi">
+              <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm shadow-xs" title="High-Speed Onboard Wi-Fi">
                 <span className="material-symbols-outlined text-[16px] text-primary">wifi</span>
-                <span>Starlink Wi-Fi</span>
+                <span>Onboard Wi-Fi</span>
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm shadow-xs" title="65W Fast USB-C Port">
                 <span className="material-symbols-outlined text-[16px] text-primary">power</span>
@@ -422,7 +422,7 @@ export default function SeatSelectionPage() {
         <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 items-start">
           {/* LEFT / CENTER: BUS CABIN CANVAS (8 Cols on xl) */}
           <div className="xl:col-span-8 space-y-6">
-            {/* Deck Switcher & Cabin Telemetry Head */}
+            {/* Deck Switcher & Cabin Status Header */}
             <div className="bg-surface-container-lowest p-4 sm:p-5 rounded-2xl shadow-sm border border-surface-container-high flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-primary text-on-primary flex items-center justify-center shadow-md">
@@ -850,7 +850,7 @@ export default function SeatSelectionPage() {
               <div>
                 <p className="text-on-surface font-bold">Zero Double-Booking Guarantee</p>
                 <p className="font-body-sm text-body-sm mt-0.5">
-                  Your seat is cryptographically locked in real-time across all state counters.
+                  Your seat is securely locked in real-time across all regional counters.
                 </p>
               </div>
             </div>

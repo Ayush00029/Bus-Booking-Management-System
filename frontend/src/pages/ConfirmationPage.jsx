@@ -118,7 +118,7 @@ export default function ConfirmationPage() {
         <div className="animate-spin rounded-full h-12 w-12 border-4 border-surface-container-high border-t-primary mb-4"></div>
         <h3 className="font-headline-md text-headline-md text-on-surface">Generating Boarding Pass...</h3>
         <p className="font-body-md text-body-md text-on-surface-variant mt-1">
-          Synchronizing verified PNR and cryptographic seat allocation with state transport radar.
+          Synchronizing verified PNR and seat allocation with reservation database.
         </p>
       </div>
     );

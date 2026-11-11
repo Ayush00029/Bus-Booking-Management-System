@@ -132,7 +132,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-on-surface-variant text-xs border-t border-slate-200/70 pt-6">
           <p>© {new Date().getFullYear()} AlgionsBus Technologies Pvt Ltd. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <Link to="/api-docs" target="_blank" className="hover:text-primary transition-colors">Swagger API</Link>
+            <a href="/api-docs" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Swagger API</a>
             <Link to="/ticket-lookup" className="hover:text-primary transition-colors">Lookup Ticket</Link>
             <Link to="/search" className="hover:text-primary transition-colors">Search Trips</Link>
           </div>

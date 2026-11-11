@@ -928,7 +928,7 @@ const seedDatabase = async () => {
         action: 'SYSTEM_INITIALIZATION',
         entityType: 'System',
         entityId: '0',
-        details: { description: 'Full-Scale Fleet Database Seeded with verified intercity corridors and live telemetry' }
+        details: { description: 'Full-Scale Fleet Database Seeded with verified intercity corridors and operational schedules' }
       },
       {
         userId: admin._id,

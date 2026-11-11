@@ -4,7 +4,7 @@ import AdminHeader from './AdminHeader';
 
 /**
  * Universal Admin Layout Shell
- * Provides persistent left dark executive sidebar, top telemetry header,
+ * Provides persistent left dark executive sidebar, top operations header,
  * and responsive content container across all admin management sections.
  */
 export default function AdminLayout({ children, title = 'Fleet Operations & Analytics' }) {

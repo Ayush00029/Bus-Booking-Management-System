@@ -26,7 +26,7 @@ export default function AdminHeader({ title = 'Fleet Operations & Analytics' }) 
         <button
           type="button"
           className="relative p-2 text-on-surface-variant hover:text-on-surface rounded-xl hover:bg-surface-container transition-colors cursor-pointer"
-          title="Telemetry Alerts"
+          title="System Notifications"
         >
           <span className="material-symbols-outlined text-[20px]">notifications</span>
           <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span>
@@ -39,7 +39,7 @@ export default function AdminHeader({ title = 'Fleet Operations & Analytics' }) 
           </div>
           <div className="hidden xl:flex flex-col">
             <span className="font-label-sm text-xs font-bold text-on-surface leading-none">
-              {user?.name || 'Marcus Vance'}
+              {user?.name || 'Administrator'}
             </span>
             <span className="text-[10px] text-on-surface-variant leading-none mt-1">
               Dispatch Admin
