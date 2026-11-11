@@ -90,6 +90,12 @@ export default function SeatMap({
           </div>
           <span className="text-[11px] font-medium">Booked</span>
         </div>
+        <div className="flex items-center gap-2">
+          <div className="w-5 h-5 rounded-md bg-amber-100 text-amber-800 border border-amber-300 flex items-center justify-center text-[10px] font-bold">
+            ⏳
+          </div>
+          <span className="text-[11px] font-semibold text-amber-800">Held by Others</span>
+        </div>
         <div className="flex items-center gap-1.5 text-[11px] text-pink-600">
           <span className="px-1.5 py-0.5 rounded bg-pink-50 border border-pink-200 font-bold text-[9px]">W</span>
           <span>Window Berth</span>
