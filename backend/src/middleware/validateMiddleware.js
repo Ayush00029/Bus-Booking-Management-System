@@ -12,7 +12,8 @@ const validate = (req, res, next) => {
       message: err.msg,
       value: err.value
     }));
-    return ApiResponse.unprocessable(res, 'Input validation failed', formatted);
+    const primaryMessage = formatted[0]?.message || 'Input validation failed';
+    return ApiResponse.unprocessable(res, primaryMessage, formatted);
   }
   next();
 };

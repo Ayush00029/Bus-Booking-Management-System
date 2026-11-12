@@ -14,9 +14,10 @@ const registerValidator = [
     .notEmpty().withMessage('Password is required')
     .isLength({ min: 6 }).withMessage('Password must be at least 6 characters long'),
   body('phone')
-    .optional()
+    .optional({ checkFalsy: true })
     .trim()
-    .isMobilePhone('any').withMessage('Please provide a valid phone number'),
+    .customSanitizer(val => (typeof val === 'string' ? val.replace(/[\s\-\(\)]/g, '') : val))
+    .isMobilePhone('any').withMessage('Please provide a valid phone number (e.g., +91 98765 43210 or 10 digits)'),
   body('role')
     .optional()
     .isIn(['passenger', 'admin']).withMessage('Role must be either passenger or admin')

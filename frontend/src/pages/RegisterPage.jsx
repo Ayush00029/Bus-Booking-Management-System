@@ -42,7 +42,8 @@ export default function RegisterPage() {
       });
       navigate('/');
     } catch (err) {
-      setError(err.message || 'Registration failed');
+      const detailedMessage = err.errors?.[0]?.message || err.message || 'Registration failed';
+      setError(detailedMessage);
     } finally {
       setLoading(false);
     }
